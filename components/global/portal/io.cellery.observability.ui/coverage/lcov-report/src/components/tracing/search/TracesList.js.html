@@ -1,0 +1,1355 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/tracing/search/TracesList.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/components/tracing/search</a> TracesList.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/81</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.53% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/79</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import AccessTime from "@material-ui/icons/AccessTime";
+import Constants from "../../../utils/constants";
+import Grid from "@material-ui/core/Grid/Grid";
+import HttpUtils from "../../../utils/api/httpUtils";
+import NotFound from "../../common/error/NotFound";
+import NotificationUtils from "../../../utils/common/notificationUtils";
+import Paper from "@material-ui/core/Paper/Paper";
+import QueryUtils from "../../../utils/common/queryUtils";
+import React from "react";
+import StateHolder from "../../common/state/stateHolder";
+import TablePagination from "@material-ui/core/TablePagination/TablePagination";
+import Typography from "@material-ui/core/Typography/Typography";
+import moment from "moment";
+import withGlobalState from "../../common/state";
+import withStyles from "@material-ui/core/styles/withStyles";
+import withColor, {ColorGenerator} from "../../common/color";
+import * as PropTypes from "prop-types";
+&nbsp;
+const styles = <span class="fstat-no" title="function not covered" >(t</span>heme) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    trace: {
+        cursor: "pointer",
+        marginTop: theme.spacing.unit * 2,
+        marginRight: 0,
+        marginBottom: theme.spacing.unit * 2,
+        marginLeft: 0
+    },
+    traceHeader: {
+        backgroundColor: "#dfdfdf",
+        padding: theme.spacing.unit
+    },
+    traceHeaderRight: {
+        fontWeight: 400,
+        fontSize: "small",
+        textAlign: "right"
+    },
+    cellName: {
+        fontWeight: 500,
+        fontSize: "normal"
+    },
+    serviceName: {
+        fontWeight: 500,
+        fontSize: "normal",
+        paddingRight: theme.spacing.unit
+    },
+    operationName: {
+        color: "#616161",
+        fontSize: "small"
+    },
+    rootStartTime: {
+        fontWeight: 300,
+        color: "#616161",
+        marginLeft: theme.spacing.unit,
+        fontSize: "normal"
+    },
+    duration: {
+        color: "#444",
+        fontStyle: "italic",
+        padding: Number(theme.spacing.unit) / 2
+    },
+    durationIcon: {
+        verticalAlign: "-webkit-baseline-middle",
+        paddingLeft: theme.spacing.unit * 2,
+        color: "#666"
+    },
+    tagCellName: {
+        color: "#666",
+        paddingLeft: Number(theme.spacing.unit) / 2
+    },
+    tagServiceName: {
+        color: "#222"
+    },
+    traceContent: {
+        padding: theme.spacing.unit
+    },
+    serviceTag: {
+        borderStyle: "solid",
+        borderWidth: "thin",
+        borderColor: "#c9c9c9",
+        margin: theme.spacing.unit,
+        display: "inline-block"
+    },
+    serviceTagColor: {
+        height: "100%",
+        width: theme.spacing.unit,
+        display: "table-cell"
+    },
+    serviceTagContent: {
+        padding: theme.spacing.unit,
+        display: "table-cell",
+        fontSize: 12
+    }
+});
+&nbsp;
+class TracesList extends React.PureComponent {
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            rowsPerPage: 5,
+            page: 0,
+            hasSearchCompleted: false,
+            isLoading: false,
+            searchResults: {
+                rootSpans: [],
+                spanCounts: []
+            }
+        };
+    }
+&nbsp;
+    componentDidMount = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+        const {loadTracesOnMount} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (loadTracesOnMount) {</span>
+<span class="cstat-no" title="statement not covered" >            this.loadTraces(true);</span>
+        }
+    };
+&nbsp;
+    handleChangeRowsPerPage = <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
+        const rowsPerPage = <span class="cstat-no" title="statement not covered" >event.target.value;</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            rowsPerPage: rowsPerPage
+        });
+    };
+&nbsp;
+    handleChangePage = <span class="fstat-no" title="function not covered" >(e</span>vent, page) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            page: page
+        });
+    };
+&nbsp;
+    /**
+     * Load the trace page.
+     *
+     * @param {MouseEvent} event Event for the click event
+     * @param {string} traceId The trace ID of the selected trace
+     * @param {string} cellName The name of the cell the component belongs to if a component was selected
+     * @param {string} component The component name if a component was selected
+     */
+    loadTracePage = <span class="fstat-no" title="function not covered" >(e</span>vent, traceId, cellName = <span class="branch-0 cbranch-no" title="branch not covered" >"",</span> component = <span class="branch-0 cbranch-no" title="branch not covered" >"")</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        event.stopPropagation();</span>
+<span class="cstat-no" title="statement not covered" >        this.props.onTraceClick(traceId, cellName, component);</span>
+    };
+&nbsp;
+    /**
+     * Get the suitable color for Component.
+     *
+     * @param {Object} component The name of the Component
+     * @returns {string} The suitable color for the component
+     */
+    getColorForComponent = <span class="fstat-no" title="function not covered" >(c</span>omponent) =&gt; {
+        const {colorGenerator} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        let colorKey = <span class="cstat-no" title="statement not covered" >ColorGenerator.UNKNOWN;</span>
+<span class="cstat-no" title="statement not covered" >        if (component.cellName) {</span>
+<span class="cstat-no" title="statement not covered" >            colorKey = component.cellName;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (Constants.System.GLOBAL_GATEWAY_NAME_PATTERN.test(component.serviceName)</span>
+            || Constants.System.ISTIO_MIXER_NAME_PATTERN.test(component.serviceName)) {
+<span class="cstat-no" title="statement not covered" >            colorKey = ColorGenerator.SYSTEM;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (component.serviceName) {</span>
+<span class="cstat-no" title="statement not covered" >            colorKey = component.serviceName;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return colorGenerator.getColor(colorKey);</span>
+    };
+&nbsp;
+    loadTraces = <span class="fstat-no" title="function not covered" >(i</span>sUserAction) =&gt; {
+        const self = <span class="cstat-no" title="statement not covered" >this;</span>
+        const {globalState, filter, globalFilterOverrides} = <span class="cstat-no" title="statement not covered" >self.props;</span>
+        const {
+            cell, component, operation, tags, minDuration, minDurationMultiplier, maxDuration, maxDurationMultiplier
+        } = <span class="cstat-no" title="statement not covered" >filter;</span>
+&nbsp;
+        // Build search object
+        const search = <span class="cstat-no" title="statement not covered" >{};</span>
+        const addSearchParam = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(k</span>ey, value) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (value &amp;&amp; value !== Constants.Dashboard.ALL_VALUE) {</span>
+<span class="cstat-no" title="statement not covered" >                search[key] = value;</span>
+            }
+        };
+<span class="cstat-no" title="statement not covered" >        addSearchParam("cell", cell);</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("serviceName", component);</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("operationName", operation);</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("tags", JSON.stringify(tags &amp;&amp; Object.keys(tags).length &gt; 0 ? tags : {}));</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("minDuration", minDuration * minDurationMultiplier);</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("maxDuration", maxDuration * maxDurationMultiplier);</span>
+<span class="cstat-no" title="statement not covered" >        addSearchParam("queryStartTime", globalFilterOverrides &amp;&amp; globalFilterOverrides.queryStartTime</span>
+            ? globalFilterOverrides.queryStartTime.valueOf()
+            : QueryUtils.parseTime(globalState.get(StateHolder.GLOBAL_FILTER).startTime).valueOf());
+<span class="cstat-no" title="statement not covered" >        addSearchParam("queryEndTime", globalFilterOverrides &amp;&amp; globalFilterOverrides.queryEndTime</span>
+            ? globalFilterOverrides.queryEndTime.valueOf()
+            : QueryUtils.parseTime(globalState.get(StateHolder.GLOBAL_FILTER).endTime).valueOf());
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (isUserAction) {</span>
+<span class="cstat-no" title="statement not covered" >            NotificationUtils.showLoadingOverlay("Searching for Traces", globalState);</span>
+<span class="cstat-no" title="statement not covered" >            self.setState({</span>
+                isLoading: true
+            });
+        }
+<span class="cstat-no" title="statement not covered" >        HttpUtils.callObservabilityAPI(</span>
+            {
+                url: `/traces/search${HttpUtils.generateQueryParamString(search)}`,
+                method: "GET"
+            },
+            globalState
+        ).then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
+<span class="cstat-no" title="statement not covered" >            self.setState(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+                ...prevState,
+                hasSearchCompleted: true,
+                searchResults: {
+                    rootSpans: data.rootSpans.map(<span class="fstat-no" title="function not covered" >(d</span>ataItem) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                        traceId: dataItem[0],
+                        rootCellName: dataItem[1],
+                        rootServiceName: dataItem[2],
+                        rootOperationName: dataItem[3],
+                        rootStartTime: dataItem[4],
+                        rootDuration: dataItem[5]
+                    })),
+                    spanCounts: data.spanCounts.map(<span class="fstat-no" title="function not covered" >(d</span>ataItem) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                        traceId: dataItem[0],
+                        cellName: dataItem[1],
+                        serviceName: dataItem[2],
+                        count: dataItem[3]
+                    }))
+                }
+            }));
+<span class="cstat-no" title="statement not covered" >            if (isUserAction) {</span>
+<span class="cstat-no" title="statement not covered" >                NotificationUtils.hideLoadingOverlay(globalState);</span>
+<span class="cstat-no" title="statement not covered" >                self.setState({</span>
+                    isLoading: false
+                });
+            }
+        }).catch(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (isUserAction) {</span>
+<span class="cstat-no" title="statement not covered" >                NotificationUtils.hideLoadingOverlay(globalState);</span>
+<span class="cstat-no" title="statement not covered" >                self.setState({</span>
+                    isLoading: false
+                });
+<span class="cstat-no" title="statement not covered" >                NotificationUtils.showNotification(</span>
+                    "Failed to search for Traces",
+                    NotificationUtils.Levels.ERROR,
+                    globalState
+                );
+            }
+        });
+    };
+&nbsp;
+    render = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+        const {classes, hideTitle} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        const {rowsPerPage, page, hasSearchCompleted, isLoading, searchResults} = <span class="cstat-no" title="statement not covered" >this.state;</span>
+&nbsp;
+        // Merging the span counts and root span information
+        const rootSpans = <span class="cstat-no" title="statement not covered" >searchResults.rootSpans.reduce(<span class="fstat-no" title="function not covered" >(a</span>ccumulator, dataItem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            accumulator[dataItem.traceId] = {...dataItem};</span>
+<span class="cstat-no" title="statement not covered" >            return accumulator;</span>
+        }, {});
+        const processedSearchResults = <span class="cstat-no" title="statement not covered" >searchResults.spanCounts.reduce(<span class="fstat-no" title="function not covered" >(a</span>ccumulator, dataItem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (accumulator[dataItem.traceId]) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!accumulator[dataItem.traceId].services) {</span>
+<span class="cstat-no" title="statement not covered" >                    accumulator[dataItem.traceId].services = [];</span>
+                }
+<span class="cstat-no" title="statement not covered" >                accumulator[dataItem.traceId].services.push({...dataItem});</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return accumulator;</span>
+        }, rootSpans);
+&nbsp;
+        const searchResultsArray = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        for (const traceId in processedSearchResults) {</span>
+<span class="cstat-no" title="statement not covered" >            if (processedSearchResults.hasOwnProperty(traceId)) {</span>
+<span class="cstat-no" title="statement not covered" >                searchResultsArray.push(processedSearchResults[traceId]);</span>
+            }
+        }
+&nbsp;
+        let view;
+<span class="cstat-no" title="statement not covered" >        if (hasSearchCompleted &amp;&amp; !isLoading) {</span>
+<span class="cstat-no" title="statement not covered" >            view = (</span>
+                searchResultsArray.length &gt; 0
+                    ? (
+                        &lt;React.Fragment&gt;
+                            {
+                                hideTitle
+                                    ? null
+                                    : (
+                                        &lt;Typography variant="h6" color="inherit" className={classes.subheading}&gt;
+                                            Traces
+                                        &lt;/Typography&gt;
+                                    )
+                            }
+                            {
+                                searchResultsArray.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .map(<span class="fstat-no" title="function not covered" >(r</span>esult) =&gt; (
+<span class="cstat-no" title="statement not covered" >                                        &lt;Paper key={result.traceId} className={classes.trace}</span>
+                                            onClick={<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >this.loadTracePage(event, result.traceId)}</span>&gt;
+                                            &lt;Grid container className={classes.traceHeader}&gt;
+                                                &lt;Grid item xs={8}&gt;
+                                                    {
+                                                        result.rootCellName
+                                                            ? (
+                                                                &lt;span className={classes.cellName}&gt;
+                                                                    {`${result.rootCellName}:`}
+                                                                &lt;/span&gt;
+                                                            )
+                                                            : null
+                                                    }
+                                                    &lt;span className={classes.serviceName}&gt;
+                                                        {result.rootServiceName}
+                                                    &lt;/span&gt;
+                                                    &lt;span className={classes.operationName}&gt;
+                                                        {result.rootOperationName}
+                                                    &lt;/span&gt;
+                                                &lt;/Grid&gt;
+                                                &lt;Grid item xs={4} className={classes.traceHeaderRight}&gt;
+                                                    &lt;span&gt;
+                                                        {
+                                                            result.services.reduce(
+<span class="fstat-no" title="function not covered" >                                                                (a</span>ccumulator, currentValue) =&gt; <span class="cstat-no" title="statement not covered" >accumulator</span>
+                                                                + currentValue.count,
+                                                                0
+                                                            )
+                                                        } Spans
+                                                    &lt;/span&gt;
+                                                    &lt;span className={classes.rootStartTime}&gt;
+                                                        {
+                                                            moment(result.rootStartTime)
+                                                                .format(Constants.Pattern.DATE_TIME)
+                                                        }
+                                                    &lt;/span&gt;
+                                                    &lt;span className={classes.durationIcon}&gt;
+                                                        &lt;AccessTime varient="inherit" fontSize="small"/&gt;
+                                                    &lt;/span&gt;
+                                                    &lt;span className={classes.duration}&gt;
+                                                        {result.rootDuration / 1000} s
+                                                    &lt;/span&gt;
+                                                &lt;/Grid&gt;
+                                            &lt;/Grid&gt;
+                                            &lt;div className={classes.traceContent}&gt;
+                                                {
+                                                    result.services
+                                                        .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {
+<span class="cstat-no" title="statement not covered" >                                                            if (a.serviceName &lt; b.serviceName) {</span>
+<span class="cstat-no" title="statement not covered" >                                                                return -1;</span>
+                                                            }
+<span class="cstat-no" title="statement not covered" >                                                            if (a.serviceName &gt; b.serviceName) {</span>
+<span class="cstat-no" title="statement not covered" >                                                                return 1;</span>
+                                                            }
+<span class="cstat-no" title="statement not covered" >                                                            return 0;</span>
+                                                        })
+                                                        .map(<span class="fstat-no" title="function not covered" >(s</span>ervice) =&gt; (
+<span class="cstat-no" title="statement not covered" >                                                            &lt;div key={`${service.cellName}-${service.serviceName}`}</span>
+                                                                className={classes.serviceTag}
+                                                                onClick={
+<span class="fstat-no" title="function not covered" >                                                                    (e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >this.loadTracePage(event, result.traceId,</span>
+                                                                        service.cellName, service.serviceName)}&gt;
+                                                                &lt;div className={classes.serviceTagColor} style={{
+                                                                    backgroundColor: this.getColorForComponent(service)
+                                                                }}/&gt;
+                                                                &lt;div className={classes.serviceTagContent}&gt;
+                                                                    &lt;span className={classes.tagCellName}&gt;
+                                                                        {service.cellName
+                                                                            ? `${service.cellName}: `
+                                                                            : null} &lt;/span&gt;
+                                                                    &lt;span className={classes.tagServiceName}&gt;
+                                                                        {service.serviceName} ({service.count})
+                                                                    &lt;/span&gt;
+                                                                &lt;/div&gt;
+                                                            &lt;/div&gt;
+                                                        ))
+                                                }
+                                            &lt;/div&gt;
+                                        &lt;/Paper&gt;
+                                    ))
+                            }
+                            &lt;TablePagination component="div" count={searchResultsArray.length} rowsPerPage={rowsPerPage}
+                                backIconButtonProps={{"aria-label": "Previous Page"}} page={page}
+                                labelRowsPerPage={"Traces Per Page"} onChangePage={this.handleChangePage}
+                                nextIconButtonProps={{"aria-label": "Next Page"}}
+                                onChangeRowsPerPage={this.handleChangeRowsPerPage}/&gt;
+                        &lt;/React.Fragment&gt;
+                    )
+                    : (
+                        &lt;NotFound title={"No Traces Found"}
+                            description={"No Traces matching the above specifications were found"}/&gt;
+                    )
+            );
+        } else {
+<span class="cstat-no" title="statement not covered" >            view = null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return view;</span>
+    };
+&nbsp;
+}
+&nbsp;
+TracesList.propTypes = {
+    classes: PropTypes.any.isRequired,
+    colorGenerator: PropTypes.instanceOf(ColorGenerator),
+    globalState: PropTypes.instanceOf(StateHolder),
+    hideTitle: PropTypes.bool,
+    loadTracesOnMount: PropTypes.bool,
+    onTraceClick: PropTypes.func.isRequired,
+    filter: PropTypes.shape({
+        cell: PropTypes.string,
+        component: PropTypes.string,
+        operation: PropTypes.string,
+        tags: PropTypes.object,
+        minDuration: PropTypes.number,
+        minDurationMultiplier: PropTypes.number,
+        maxDuration: PropTypes.number,
+        maxDurationMultiplier: PropTypes.number
+    }).isRequired,
+    globalFilterOverrides: PropTypes.shape({
+        queryStartTime: PropTypes.any.isRequired,
+        queryEndTime: PropTypes.any.isRequired
+    })
+};
+&nbsp;
+export default withStyles(styles)(withColor(withGlobalState(TracesList)));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

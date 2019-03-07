@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/AttributesBag.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/Constants.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/TelemetryServiceImpl.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/GlobalDictionary.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/AttributedDecoder.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/Utils.java">
+</file>
+<file name="/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/TelemetryEventSource.java">
+</file>
+</checkstyle>

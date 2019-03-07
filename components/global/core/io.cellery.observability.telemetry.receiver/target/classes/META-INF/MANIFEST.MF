@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942148114
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.telemetry.receiver
+Bundle-SymbolicName: io.cellery.observability.telemetry.receiver
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.telemetry.receiver;uses:="com.g
+ oogle.protobuf,org.wso2.siddhi.annotation,org.wso2.siddhi.annotation.ut
+ il,org.wso2.siddhi.core.config,org.wso2.siddhi.core.exception,org.wso2.
+ siddhi.core.stream.input.source,org.wso2.siddhi.core.util.config,org.ws
+ o2.siddhi.core.util.transport";version="0.1.1",io.cellery.observability
+ .telemetry.receiver.generated;uses:="com.google.common.util.concurrent,
+ com.google.protobuf,com.google.rpc,io.grpc,io.grpc.stub";version="0.1.1
+ ",io.cellery.observability.telemetry.receiver.internal;uses:="io.celler
+ y.observability.telemetry.receiver.generated,io.grpc.stub,org.wso2.sidd
+ hi.core.stream.input.source";version="0.1.1"
+Import-Package: com.google.common.util.concurrent;resolution:=optional;v
+ ersion="[25.1,26)",com.google.gson;resolution:=optional,com.google.prot
+ obuf;resolution:=optional;version="[3.6,4)",com.google.rpc;resolution:=
+ optional,io.cellery.observability.telemetry.receiver;resolution:=option
+ al,io.cellery.observability.telemetry.receiver.generated;resolution:=op
+ tional,io.cellery.observability.telemetry.receiver.internal;resolution:
+ =optional,io.grpc;resolution:=optional;version="[1.15,2)",io.grpc.proto
+ buf;resolution:=optional,io.grpc.stub;resolution:=optional,org.apache.l
+ og4j;resolution:=optional;version="[1.2,2)",org.wso2.siddhi.annotation;
+ resolution:=optional;version="[4.1,5)",org.wso2.siddhi.annotation.util;
+ resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.config;reso
+ lution:=optional;version="[4.1,5)",org.wso2.siddhi.core.exception;resol
+ ution:=optional;version="[4.1,5)",org.wso2.siddhi.core.stream.input.sou
+ rce;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.util.co
+ nfig;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.util.t
+ ransport;resolution:=optional;version="[4.1,5)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

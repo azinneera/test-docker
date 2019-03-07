@@ -1,0 +1,53 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942171229
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.tracing.receiver
+Bundle-SymbolicName: io.cellery.observability.tracing.receiver
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.tracing.receiver;uses:="com.sun
+ .net.httpserver,org.wso2.siddhi.annotation,org.wso2.siddhi.annotation.u
+ til,org.wso2.siddhi.core.config,org.wso2.siddhi.core.exception,org.wso2
+ .siddhi.core.stream.input.source,org.wso2.siddhi.core.util.config,org.w
+ so2.siddhi.core.util.transport";version="0.1.1",io.cellery.observabilit
+ y.tracing.receiver.generated.thrift;uses:="org.apache.thrift,org.apache
+ .thrift.async,org.apache.thrift.meta_data,org.apache.thrift.protocol,or
+ g.apache.thrift.server,org.apache.thrift.transport";version="0.1.1",io.
+ cellery.observability.tracing.receiver.internal;uses:="org.apache.thrif
+ t";version="0.1.1"
+Import-Package: com.google.gson;resolution:=optional,com.sun.net.httpser
+ ver;resolution:=optional,io.cellery.observability.tracing.receiver.gene
+ rated.thrift;resolution:=optional,io.cellery.observability.tracing.rece
+ iver.internal;resolution:=optional,org.apache.commons.io;resolution:=op
+ tional;version="[1.4,2)",org.apache.log4j;resolution:=optional;version=
+ "[1.2,2)",org.apache.thrift;resolution:=optional;version="[0.10,1)",org
+ .apache.thrift.async;resolution:=optional;version="[0.10,1)",org.apache
+ .thrift.meta_data;resolution:=optional;version="[0.10,1)",org.apache.th
+ rift.protocol;resolution:=optional;version="[0.10,1)",org.apache.thrift
+ .scheme;resolution:=optional;version="[0.10,1)",org.apache.thrift.serve
+ r;resolution:=optional;version="[0.10,1)",org.apache.thrift.transport;r
+ esolution:=optional;version="[0.10,1)",org.slf4j;resolution:=optional;v
+ ersion="[1.7,2)",org.wso2.siddhi.annotation;resolution:=optional;versio
+ n="[4.1,5)",org.wso2.siddhi.annotation.util;resolution:=optional;versio
+ n="[4.1,5)",org.wso2.siddhi.core.config;resolution:=optional;version="[
+ 4.1,5)",org.wso2.siddhi.core.exception;resolution:=optional;version="[4
+ .1,5)",org.wso2.siddhi.core.stream.input.source;resolution:=optional;ve
+ rsion="[4.1,5)",org.wso2.siddhi.core.util.config;resolution:=optional;v
+ ersion="[4.1,5)",org.wso2.siddhi.core.util.transport;resolution:=option
+ al;version="[4.1,5)",zipkin2;resolution:=optional;version="[2.11,3)",zi
+ pkin2.codec;resolution:=optional;version="[2.11,3)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

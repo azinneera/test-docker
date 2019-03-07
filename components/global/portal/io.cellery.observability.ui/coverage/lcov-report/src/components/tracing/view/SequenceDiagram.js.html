@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/tracing/view/SequenceDiagram.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/components/tracing/view</a> SequenceDiagram.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.64% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/122</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/84</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.65% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/121</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import "./SequenceDiagram.css";
+import ChevronRight from "@material-ui/icons/ChevronRight";
+import Constants from "../../../utils/constants";
+import React from "react";
+import Span from "../../../utils/tracing/span";
+import TracingUtils from "../../../utils/tracing/tracingUtils";
+import Typography from "@material-ui/core/Typography";
+import interact from "interactjs";
+import mermaid from "mermaid";
+import {withStyles} from "@material-ui/core/styles";
+import withColor, {ColorGenerator} from "../../common/color";
+import * as PropTypes from "prop-types";
+&nbsp;
+const styles = <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    newMessageText: {
+        fill: "#4c4cb3 !important",
+        cursor: "pointer"
+    },
+    subtitle: {
+        fontWeight: 400,
+        fontSize: "1.0rem"
+    },
+    mermaid: {
+        padding: 10
+    },
+    navigation: {
+        paddingTop: 20,
+        paddingBottom: 5,
+        marginLeft: 50
+    },
+    navList: {
+        display: "block",
+        float: "left"
+    }
+});
+&nbsp;
+class SequenceDiagram extends React.Component {
+&nbsp;
+    static GLOBAL = "global";
+    static GLOBAL_GATEWAY = "global gateway";
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            config: "",
+            spanData: "sequenceDiagram \n",
+            copyArr: [],
+            clicked: false,
+            cellName: null,
+            clonedArray: [],
+            cellClicked: "global",
+            callIdClicked: ""
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.mermaidDivRef = React.createRef();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.addCells = this.addCells.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >        this.addServices = this.addServices.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >        this.drawCells = this.drawCells.bind(this);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
+        const {classes} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;div&gt;
+                &lt;div className={classes.navigation}&gt;
+                    &lt;span className={classes.navList}&gt;
+                        &lt;Typography color="textSecondary" className={classes.subtitle} onClick={this.addCells}
+                            style={this.state.clicked
+                                ? {color: "#3e51b5", cursor: "pointer", textDecoration: "underline"}
+                                : {}}&gt;
+                       Cells
+                        &lt;/Typography&gt;
+                    &lt;/span&gt;
+                    &lt;span className={classes.navList}&gt;
+                        &lt;ChevronRight color="action" style={this.state.clicked ? {} : {display: "none"}}/&gt;
+                    &lt;/span&gt;
+                    &lt;span className={classes.navList}&gt;
+                        &lt;Typography color="textSecondary" className={classes.subtitle}
+                            style={this.state.clicked ? {} : {display: "none"}}&gt;
+                            {this.state.cellClicked} cell [{this.state.callIdClicked}] - Services
+                        &lt;/Typography&gt;
+                    &lt;/span&gt;
+&nbsp;
+                &lt;/div&gt;
+                &lt;br/&gt;
+                &lt;div className={classes.mermaid} ref={this.mermaidDivRef}&gt;
+                    {this.state.config}
+                &lt;/div&gt;
+            &lt;/div&gt;
+&nbsp;
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>mponentDidMount() {
+<span class="cstat-no" title="statement not covered" >        this.addCells();</span>
+<span class="cstat-no" title="statement not covered" >        interact(".messageText").on("tap", <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if ((event.srcElement.innerHTML !== "Return")</span>
+                &amp;&amp; (this.state.clicked !== true)) {
+                const numb = <span class="cstat-no" title="statement not covered" >event.srcElement.innerHTML.match(/\d+/g).map(Number);</span>
+<span class="cstat-no" title="statement not covered" >                this.addServices(numb);</span>
+            }
+        });
+<span class="cstat-no" title="statement not covered" >        this.cloneArray();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>mponentDidUpdate(prevProps, prevState, snapshot) {
+<span class="cstat-no" title="statement not covered" >        if (this.state.config !== prevState.config) {</span>
+            const collectionsMessage = <span class="cstat-no" title="statement not covered" >this.mermaidDivRef.current.getElementsByClassName("messageText");</span>
+<span class="cstat-no" title="statement not covered" >            this.mermaidDivRef.current.removeAttribute("data-processed");</span>
+<span class="cstat-no" title="statement not covered" >            mermaid.init(this.mermaidDivRef.current);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (!this.state.clicked) {</span>
+<span class="cstat-no" title="statement not covered" >                this.setMessageLinkStyle(collectionsMessage);</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.state.config !== prevState.config || this.props.colorGenerator !== prevProps.colorGenerator) {</span>
+            const collectionsActor = <span class="cstat-no" title="statement not covered" >this.mermaidDivRef.current.getElementsByClassName("actor");</span>
+<span class="cstat-no" title="statement not covered" >            this.addActorColor(this.state.clicked, collectionsActor);</span>
+        }
+    }
+&nbsp;
+    /**
+     * Sets the style for message links that are clickable (cell -level diagram).
+     *
+     * @param {Element []} messageElementArray The array of message link elements.
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    se</span>tMessageLinkStyle(messageElementArray) {
+        const {classes} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; messageElementArray.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (messageElementArray[i].innerHTML.match("\\s\\[([0-9]+)\\]+$")) {</span>
+<span class="cstat-no" title="statement not covered" >                messageElementArray[i].classList.add(classes.newMessageText);</span>
+            }
+        }
+    }
+&nbsp;
+&nbsp;
+    /**
+     * Adds the relevant cell color, which is consistent throughout the dashboard, to the actors.
+     *
+     * @param {boolean} serviceClicked The variable to check if the user is in service-level diagram.
+     * @param {Element[]} elementArray The array of elements with the class name `actor`.
+     */
+<span class="fstat-no" title="function not covered" >    ad</span>dActorColor(serviceClicked, elementArray) {
+        const {colorGenerator} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        let color;
+        let cellName;
+        let actorStyle;
+<span class="cstat-no" title="statement not covered" >        if (serviceClicked) {</span>
+<span class="cstat-no" title="statement not covered" >            cellName = this.state.cellClicked;</span>
+<span class="cstat-no" title="statement not covered" >            if (cellName === SequenceDiagram.GLOBAL) {</span>
+<span class="cstat-no" title="statement not covered" >                color = colorGenerator.getColor(ColorGenerator.SYSTEM);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                color = colorGenerator.getColor(SequenceDiagram.addDash(cellName));</span>
+            }
+<span class="cstat-no" title="statement not covered" >            actorStyle = `</span>
+                stroke: ${color};
+                stroke-width: 3;
+                fill: #ffffff`;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; elementArray.length; i += 2) {</span>
+<span class="cstat-no" title="statement not covered" >                elementArray[i].style = actorStyle;</span>
+            }
+        } else {
+            // For loop with iteration by factor 2 to skip SVG `rect` element and get the text in each actor.
+<span class="cstat-no" title="statement not covered" >            for (let i = 1; i &lt; elementArray.length; i += 2) {</span>
+<span class="cstat-no" title="statement not covered" >                if (elementArray[i].firstElementChild !== null) {</span>
+                    const cellName = <span class="cstat-no" title="statement not covered" >SequenceDiagram.addDash(elementArray[i].firstElementChild.innerHTML);</span>
+<span class="cstat-no" title="statement not covered" >                    if (cellName === SequenceDiagram.addDash(SequenceDiagram.GLOBAL_GATEWAY)) {</span>
+<span class="cstat-no" title="statement not covered" >                        color = colorGenerator.getColor(ColorGenerator.SYSTEM);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        color = colorGenerator.getColor(cellName);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    actorStyle = `</span>
+                stroke: ${color};
+                stroke-width: 3;
+                fill: #ffffff`;
+                    // Index of i-1 is given to set the style to the respective SVG `rect` element.
+<span class="cstat-no" title="statement not covered" >                    elementArray[i - 1].style = actorStyle;</span>
+                }
+            }
+        }
+    }
+&nbsp;
+    /**
+     * Create a copy of the original span list
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    cl</span>oneArray() {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            clonedArray: this.props.spans
+        });
+    }
+&nbsp;
+&nbsp;
+    /**
+     * Adds the service calls made for a particular cell to the diagram.
+     *
+     * @param {number[]} callId The span's call Id of the particular cell call.
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    ad</span>dServices(callId) {
+        let data2 = <span class="cstat-no" title="statement not covered" >"sequenceDiagram \n";</span>
+        const treeRoot = <span class="cstat-no" title="statement not covered" >this.state.clonedArray[SequenceDiagram.findSpanIndexCall(this.state.clonedArray, callId)];</span>
+        const parentName = <span class="cstat-no" title="statement not covered" >treeRoot.cell.name;</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            cellClicked: parentName,
+            callIdClicked: callId
+        });
+<span class="cstat-no" title="statement not covered" >        data2 += `activate ${SequenceDiagram.removeDash(treeRoot.serviceName)}\n`;</span>
+        let j = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >        treeRoot.walk(</span>
+<span class="fstat-no" title="function not covered" >            (s</span>pan) =&gt; {
+<span class="cstat-no" title="statement not covered" >                if (!span.isFromIstioSystemComponent() &amp;&amp; !span.isFromCellerySystemComponent()) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (!span.callingId &amp;&amp; parentName === span.cell.name) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (span.parent.serviceName !== span.serviceName) {</span>
+<span class="cstat-no" title="statement not covered" >                            j += 1;</span>
+<span class="cstat-no" title="statement not covered" >                            data2 += `${`${SequenceDiagram.removeDash(span.parent.serviceName)}  -&gt;&gt;+`</span>
+                                + `${SequenceDiagram.removeDash(span.serviceName)}:`}${span.operationName}`
+                                + `- [${callId}.${j}] \n`;
+                        }
+                    }
+                }
+            }, null,
+<span class="fstat-no" title="function not covered" >            (s</span>pan) =&gt; {
+<span class="cstat-no" title="statement not covered" >                if (!span.isFromIstioSystemComponent() &amp;&amp; !span.isFromCellerySystemComponent()) {</span>
+<span class="cstat-no" title="statement not covered" >                    data2 += SequenceDiagram.updateTextDataWithReturn(span, parentName);</span>
+                }
+            },
+<span class="fstat-no" title="function not covered" >            (s</span>pan) =&gt; (<span class="cstat-no" title="statement not covered" >!span.isFromIstioSystemComponent() &amp;&amp; !span.isFromCellerySystemComponent()</span>
+                &amp;&amp; !span.callingId &amp;&amp; parentName !== span.parent.cell.name)
+        );
+<span class="cstat-no" title="statement not covered" >        data2 += `deactivate ${SequenceDiagram.removeDash(treeRoot.serviceName)}\n`;</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            config: data2,
+            clicked: true
+        });
+    }
+&nbsp;
+    /**
+     * Updates the text data, which is used by the mermaid library to generate diagrams, with return drawn.
+     *
+     * @param {Span} span The span array.
+     * @param {String} parentName The parent cell name
+     * @return {String} text The updated text
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    st</span>atic updateTextDataWithReturn(span, parentName) {
+        let text = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >        if (!span.callingId &amp;&amp; parentName === span.cell.name) {</span>
+<span class="cstat-no" title="statement not covered" >            if (span.parent.serviceName !== span.serviceName) {</span>
+<span class="cstat-no" title="statement not covered" >                text += `${SequenceDiagram.removeDash(span.serviceName)}--&gt;&gt;- `</span>
+                    + `${SequenceDiagram.removeDash(span.parent.serviceName)}: Return \n`;
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return text;</span>
+    }
+&nbsp;
+    /**
+     * Adds the cell calls made for a particular trace to the diagram..
+     */
+<span class="fstat-no" title="function not covered" >    ad</span>dCells() {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            config: this.drawCells(),
+            clicked: false
+        });
+    }
+&nbsp;
+    /**
+     * Gets all the cells that has been involved in the particular trace.
+     *
+     * @param {Array} spanArray The array containing the list of all spans.
+     * @return {Array} cellArray The array containing all the cells in the trace.
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    st</span>atic separateCells(spanArray) {
+        const cellArray = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; spanArray.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if ((spanArray[i].serviceName.includes(SequenceDiagram.GLOBAL))) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!cellArray.includes(SequenceDiagram.GLOBAL_GATEWAY)) {</span>
+<span class="cstat-no" title="statement not covered" >                    cellArray.push(SequenceDiagram.GLOBAL_GATEWAY);</span>
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            if (spanArray[i].cell) {</span>
+                const cellName = <span class="cstat-no" title="statement not covered" >SequenceDiagram.removeDash(spanArray[i].cell.name);</span>
+<span class="cstat-no" title="statement not covered" >                if (!cellArray.includes(cellName)) {</span>
+<span class="cstat-no" title="statement not covered" >                    cellArray.push(cellName);</span>
+                }
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return cellArray;</span>
+    }
+&nbsp;
+    /**
+     * Include all the cells in the trace as actors in the sequence diagram..
+     *
+     * @return {String} dataText The text data as string which is converted to the diagram by the mermaid library.
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    dr</span>awCells() {
+        const array = <span class="cstat-no" title="statement not covered" >SequenceDiagram.separateCells(this.props.spans);</span>
+        let dataText = <span class="cstat-no" title="statement not covered" >"sequenceDiagram \n";</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; array.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            dataText += `participant ${array[i]}\n`;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        dataText += `activate ${SequenceDiagram.GLOBAL_GATEWAY}\n`;</span>
+<span class="cstat-no" title="statement not covered" >        return dataText + this.addCellConnections();</span>
+    }
+&nbsp;
+    /**
+     * Connects all the cell communications in the diagram.
+     *
+     * @returns {string} dataText The text data of string type that is converted by the mermaid
+     *                             library to depict the cell connections.
+     */
+<span class="fstat-no" title="function not covered" >    ad</span>dCellConnections() {
+        let callId = <span class="cstat-no" title="statement not covered" >1;</span>
+        const tree = <span class="cstat-no" title="statement not covered" >TracingUtils.getTreeRoot(this.props.spans);</span>
+        let dataText = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >        tree.walk(<span class="fstat-no" title="function not covered" >(s</span>pan) =&gt; {</span>
+            let parentCellName;
+            let childCellName;
+<span class="cstat-no" title="statement not covered" >            if (span.parent !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                if (span.parent.cell === null) {</span>
+<span class="cstat-no" title="statement not covered" >                    parentCellName = SequenceDiagram.GLOBAL_GATEWAY;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    parentCellName = span.parent.cell.name;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (span.cell) {</span>
+<span class="cstat-no" title="statement not covered" >                    parentCellName = SequenceDiagram.removeDash(parentCellName);</span>
+<span class="cstat-no" title="statement not covered" >                    childCellName = SequenceDiagram.removeDash(span.cell.name);</span>
+<span class="cstat-no" title="statement not covered" >                    if (parentCellName !== childCellName</span>
+                        &amp;&amp; !span.operationName.match(Constants.System.SIDECAR_AUTH_FILTER_OPERATION_NAME_PATTERN)) {
+<span class="cstat-no" title="statement not covered" >                        span.callingId = callId;</span>
+<span class="cstat-no" title="statement not covered" >                        dataText += `${parentCellName}-&gt;&gt;+${childCellName}: call ${span.cell.name}-cell [${callId}] \n`;</span>
+<span class="cstat-no" title="statement not covered" >                        callId += 1;</span>
+                    }
+                }
+            }
+        }, undefined, <span class="fstat-no" title="function not covered" >(s</span>pan) =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (span.cell) {</span>
+                let parentCellName = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >                if (span.parent.cell === null) {</span>
+<span class="cstat-no" title="statement not covered" >                    parentCellName = SequenceDiagram.GLOBAL_GATEWAY;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    parentCellName = span.parent.cell.name;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (span.cell.name !== parentCellName</span>
+                    &amp;&amp; !span.operationName.match(Constants.System.SIDECAR_AUTH_FILTER_OPERATION_NAME_PATTERN)) {
+<span class="cstat-no" title="statement not covered" >                    dataText += `${SequenceDiagram.removeDash(span.cell.name)}--&gt;&gt;-`</span>
+                        + `${SequenceDiagram.removeDash(parentCellName)}: Return \n`;
+                }
+            }
+        });
+<span class="cstat-no" title="statement not covered" >        dataText += `deactivate ${SequenceDiagram.GLOBAL_GATEWAY}`;</span>
+<span class="cstat-no" title="statement not covered" >        return dataText;</span>
+    }
+&nbsp;
+    /**
+     * Removes dash symbol from cell/service names as the library doesn't support dashes in the actors name.
+     *
+     * @param {string} name The cell/service name that needs to be checked for dashes.
+     * @returns {string} name The cell/service name after removing the dashes.
+     */
+<span class="fstat-no" title="function not covered" >    st</span>atic removeDash(name) {
+<span class="cstat-no" title="statement not covered" >        if (name.includes("-")) {</span>
+<span class="cstat-no" title="statement not covered" >            return name.replace(/-/g, " ");</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return name;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    st</span>atic addDash(name) {
+<span class="cstat-no" title="statement not covered" >        if (name.includes(" ")) {</span>
+<span class="cstat-no" title="statement not covered" >            return name.replace(" ", "-");</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return name;</span>
+    }
+&nbsp;
+    /**
+     * Gets the index of the span object from an array by checking the span's unique id.
+     *
+     * @param {Array} data The array from which the index should be found.
+     * @param {number[]} value The call Id of the span object.
+     *
+     */
+&nbsp;
+<span class="fstat-no" title="function not covered" >    st</span>atic findSpanIndexCall(data, value) {
+        let isFound = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >        return data.findIndex(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (item.callingId) {</span>
+<span class="cstat-no" title="statement not covered" >                isFound = item.callingId === value[0];</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return isFound;</span>
+        });
+    }
+&nbsp;
+}
+&nbsp;
+SequenceDiagram.propTypes = {
+    classes: PropTypes.any.isRequired,
+    spans: PropTypes.arrayOf(
+        PropTypes.instanceOf(Span).isRequired
+    ).isRequired,
+    colorGenerator: PropTypes.instanceOf(ColorGenerator)
+};
+&nbsp;
+export default withStyles(styles, {withTheme: true})(withColor(SequenceDiagram));
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

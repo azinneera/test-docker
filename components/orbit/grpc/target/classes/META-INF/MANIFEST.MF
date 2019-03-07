@@ -1,0 +1,53 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942073386
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: This bundle represents io.grpc cellery orbit bundle
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: grpc
+Bundle-SymbolicName: grpc
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.grpc;version="1.15.0";uses:="javax.annotation,javax.n
+ et.ssl",io.grpc.inprocess;version="1.15.0";uses:="io.grpc,io.grpc.inter
+ nal",io.grpc.internal;version="1.15.0";uses:="com.google.common.base,co
+ m.google.common.util.concurrent,io.grpc,io.opencensus.stats,io.opencens
+ us.tags,io.opencensus.tags.propagation,javax.annotation,javax.net.ssl",
+ io.grpc.netty;version="1.15.0";uses:="com.google.common.collect,io.grpc
+ ,io.grpc.internal,io.netty.channel,io.netty.handler.codec.http2,io.nett
+ y.handler.ssl,io.netty.util,javax.annotation",io.grpc.util;version="1.1
+ 5.0";uses:="io.grpc,javax.annotation"
+Import-Package: com.google.common.base;resolution:=optional;version="[25
+ .1,26)",com.google.common.collect;resolution:=optional;version="[25.1,2
+ 6)",com.google.common.io;resolution:=optional;version="[25.1,26)",com.g
+ oogle.common.math;resolution:=optional;version="[25.1,26)",com.google.c
+ ommon.util.concurrent;resolution:=optional;version="[25.1,26)",com.goog
+ le.gson.stream;resolution:=optional;version="[2.7,3)",io.grpc;resolutio
+ n:=optional;version="[1.15,2)",io.grpc.internal;resolution:=optional;ve
+ rsion="[1.15,2)",io.netty.bootstrap;resolution:=optional,io.netty.buffe
+ r;resolution:=optional,io.netty.channel;resolution:=optional,io.netty.c
+ hannel.nio;resolution:=optional,io.netty.channel.socket.nio;resolution:
+ =optional,io.netty.handler.codec;resolution:=optional,io.netty.handler.
+ codec.http;resolution:=optional,io.netty.handler.codec.http2;resolution
+ :=optional,io.netty.handler.logging;resolution:=optional,io.netty.handl
+ er.proxy;resolution:=optional,io.netty.handler.ssl;resolution:=optional
+ ,io.netty.util;resolution:=optional,io.netty.util.concurrent;resolution
+ :=optional,io.netty.util.internal;resolution:=optional,io.opencensus.co
+ ntrib.grpc.metrics;resolution:=optional,io.opencensus.stats;resolution:
+ =optional,io.opencensus.tags;resolution:=optional,io.opencensus.tags.pr
+ opagation;resolution:=optional,io.opencensus.tags.unsafe;resolution:=op
+ tional,io.opencensus.trace;resolution:=optional,io.opencensus.trace.pro
+ pagation;resolution:=optional,io.opencensus.trace.unsafe;resolution:=op
+ tional,javax.annotation;resolution:=optional,javax.naming;resolution:=o
+ ptional,javax.naming.directory;resolution:=optional,javax.net.ssl;resol
+ ution:=optional
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

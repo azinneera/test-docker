@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/common/toptoolbar/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/components/common/toptoolbar</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.35% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import ArrowBack from "@material-ui/icons/ArrowBack";
+import Button from "@material-ui/core/Button";
+import CalendarToday from "@material-ui/icons/CalendarTodayOutlined";
+import DateRangePicker from "./DateRangePicker";
+import FormControl from "@material-ui/core/FormControl/FormControl";
+import IconButton from "@material-ui/core/IconButton/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment/InputAdornment";
+import MenuItem from "@material-ui/core/MenuItem/MenuItem";
+import Popover from "@material-ui/core/Popover";
+import QueryUtils from "../../../utils/common/queryUtils";
+import React from "react";
+import Refresh from "@material-ui/icons/Refresh";
+import Select from "@material-ui/core/Select/Select";
+import Toolbar from "@material-ui/core/Toolbar/Toolbar";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography/Typography";
+import {withRouter} from "react-router-dom";
+import {withStyles} from "@material-ui/core";
+import withGlobalState, {StateHolder} from "../state";
+import * as PropTypes from "prop-types";
+&nbsp;
+const styles = <span class="fstat-no" title="function not covered" >(t</span>heme) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    container: {
+        position: "sticky",
+        top: 64,
+        backgroundColor: "#fafafa",
+        marginBottom: 42,
+        zIndex: 999,
+        minHeight: 70
+    },
+    title: {
+        marginLeft: theme.spacing.unit,
+        marginTop: theme.spacing.unit
+    },
+    subTitle: {
+        marginLeft: theme.spacing.unit,
+        marginTop: theme.spacing.unit * 1.5,
+        color: "#666"
+    },
+    grow: {
+        flexGrow: 1
+    },
+    dateRangeButton: {
+        marginRight: theme.spacing.unit * 3,
+        textTransform: "none",
+        fontWeight: 500,
+        border: "1px solid #e0e0e0"
+    },
+    startInputAdornment: {
+        marginRight: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit * 2
+    },
+    refreshTimeSelect: {
+        border: "none",
+        fontSize: 14
+    },
+    menuButton: {
+        marginTop: theme.spacing.unit
+    },
+    dateRangeNicknameSelectedTime: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        fontWeight: 500
+    },
+    calendar: {
+        marginLeft: 10
+    }
+});
+&nbsp;
+class TopToolbar extends React.Component {
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+        const {globalState} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+&nbsp;
+        const globalFilter = <span class="cstat-no" title="statement not covered" >globalState.get(StateHolder.GLOBAL_FILTER);</span>
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            startTime: globalFilter.startTime,
+            endTime: globalFilter.endTime,
+            dateRangeNickname: globalFilter.dateRangeNickname,
+            refreshInterval: globalFilter.refreshInterval,
+            dateRangeSelectorAnchorElement: undefined,
+            isAutoRefreshEnabled: true
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.refreshIntervalID = null;</span>
+    }
+&nbsp;
+    componentDidMount = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.refreshManually();</span>
+    };
+&nbsp;
+    componentDidUpdate = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.startRefreshTask();</span>
+    };
+&nbsp;
+    componentWillUnmount = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.stopRefreshTask();</span>
+    };
+&nbsp;
+    static getDerivedStateFromProps = <span class="fstat-no" title="function not covered" >(p</span>rops, state) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+        ...state,
+        isAutoRefreshEnabled: state.endTime.includes("now")
+    });
+&nbsp;
+    render = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+        const {classes, title, subTitle, location, history, onUpdate} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        const {
+            startTime, endTime, dateRangeNickname, refreshInterval, dateRangeSelectorAnchorElement, isAutoRefreshEnabled
+        } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+&nbsp;
+        const isDateRangeSelectorOpen = <span class="cstat-no" title="statement not covered" >Boolean(dateRangeSelectorAnchorElement);</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;div className={classes.container}&gt;
+                &lt;Toolbar disableGutters={true}&gt;
+                    {
+                        (location.state &amp;&amp; location.state.hideBackButton) || history.length &lt;= 1
+                            || location.pathname === "/"
+                            ? null
+                            : (
+                                &lt;IconButton className={classes.menuButton} color="inherit" aria-label="Back"
+                                    onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >history.goBack()}</span>&gt;
+                                    &lt;ArrowBack/&gt;
+                                &lt;/IconButton&gt;
+                            )
+                    }
+                    &lt;Typography variant="h5" color="inherit" className={classes.title}&gt;
+                        {title}
+                    &lt;/Typography&gt;
+                    {
+                        subTitle
+                            ? &lt;Typography variant="subtitle1" className={classes.subTitle}&gt;
+                                {subTitle}
+                            &lt;/Typography&gt;
+                            : null
+                    }
+                    &lt;div className={classes.grow}/&gt;
+                    {
+                        onUpdate
+                            ? (
+                                &lt;React.Fragment&gt;
+                                    &lt;Button aria-owns={isDateRangeSelectorOpen ? "date-range-picker-popper" : undefined}
+                                        className={classes.dateRangeButton} aria-haspopup="true" size="small"
+                                        variant="text"
+                                        onClick={<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >this.openDateRangeSelector(event.currentTarget)}</span>&gt;
+                                        {
+                                            dateRangeNickname
+                                                ? dateRangeNickname
+                                                : (
+                                                    &lt;React.Fragment&gt;
+                                                        &lt;Typography color={"textSecondary"}&gt;From&lt;/Typography&gt;
+                                                        &lt;Typography className={classes.dateRangeNicknameSelectedTime}&gt;
+                                                            {startTime}
+                                                        &lt;/Typography&gt;
+                                                        &lt;Typography color={"textSecondary"}&gt;To&lt;/Typography&gt;
+                                                        &lt;Typography className={classes.dateRangeNicknameSelectedTime}&gt;
+                                                            {endTime}
+                                                        &lt;/Typography&gt;
+                                                    &lt;/React.Fragment&gt;
+                                                )
+                                        }
+                                        &lt;CalendarToday color="action" className={classes.calendar}/&gt;
+                                    &lt;/Button&gt;
+                                    &lt;Popover id="date-range-picker-popper"
+                                        open={isDateRangeSelectorOpen}
+                                        anchorEl={dateRangeSelectorAnchorElement}
+                                        onClose={this.closeDateRangeSelector}
+                                        anchorOrigin={{
+                                            vertical: "bottom",
+                                            horizontal: "right"
+                                        }}
+                                        transformOrigin={{
+                                            vertical: "top",
+                                            horizontal: "right"
+                                        }}&gt;
+                                        &lt;DateRangePicker startTime={startTime} endTime={endTime}
+                                            dateRangeNickname={dateRangeNickname} onRangeChange={this.setTimePeriod}/&gt;
+                                    &lt;/Popover&gt;
+                                    {
+                                        isAutoRefreshEnabled
+                                            ? (
+                                                &lt;React.Fragment&gt;
+                                                    &lt;FormControl&gt;
+                                                        &lt;Select value={refreshInterval}
+                                                            onChange={this.setRefreshInterval}
+                                                            inputProps={{
+                                                                name: "refresh-interval",
+                                                                id: "refresh-interval"
+                                                            }}
+                                                            startAdornment={(
+                                                                &lt;InputAdornment className={classes.startInputAdornment}
+                                                                    variant="filled" position="start"&gt;
+                                                                        Refresh
+                                                                &lt;/InputAdornment&gt;
+                                                            )}
+                                                            className={classes.refreshTimeSelect}&gt;
+                                                            &lt;MenuItem value={-1}&gt;Off&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={5 * 1000}&gt;Every 5 sec&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={10 * 1000}&gt;Every 10 sec&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={15 * 1000}&gt;Every 15 sec&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={30 * 1000}&gt;Every 30 sec&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={60 * 1000}&gt;Every 1 min&lt;/MenuItem&gt;
+                                                            &lt;MenuItem value={5 * 60 * 1000}&gt;Every 5 min&lt;/MenuItem&gt;
+                                                        &lt;/Select&gt;
+                                                    &lt;/FormControl&gt;
+                                                    &lt;Tooltip title="Refresh Now"&gt;
+                                                        &lt;IconButton aria-label="Refresh" onClick={this.refreshManually}&gt;
+                                                            &lt;Refresh /&gt;
+                                                        &lt;/IconButton&gt;
+                                                    &lt;/Tooltip&gt;
+                                                &lt;/React.Fragment&gt;
+                                            )
+                                            : null
+                                    }
+                                &lt;/React.Fragment&gt;
+                            )
+                            : null
+                    }
+                &lt;/Toolbar&gt;
+            &lt;/div&gt;
+        );
+    };
+&nbsp;
+    /**
+     * Open the date range selector with the provided element as the anchor.
+     *
+     * @param {HTMLElement} element The element which should act as the anchor of the date range popover
+     */
+    openDateRangeSelector = <span class="fstat-no" title="function not covered" >(e</span>lement) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            dateRangeSelectorAnchorElement: element
+        });
+    };
+&nbsp;
+    /**
+     * Close the date range selector currently open.
+     */
+    closeDateRangeSelector = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            dateRangeSelectorAnchorElement: undefined
+        });
+    };
+&nbsp;
+    /**
+     * Set the time period which should be considered for fetching data for the application.
+     *
+     * @param {string} startTime The new start time to be set
+     * @param {string} endTime The new end time to be set
+     * @param {string} dateRangeNickname The new date range nickname to be set
+     */
+    setTimePeriod = <span class="fstat-no" title="function not covered" >(s</span>tartTime, endTime, dateRangeNickname) =&gt; {
+        const {globalState} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        globalState.set(StateHolder.GLOBAL_FILTER, {</span>
+            ...globalState.get(StateHolder.GLOBAL_FILTER),
+            startTime: startTime,
+            endTime: endTime,
+            dateRangeNickname: dateRangeNickname
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.stopRefreshTask(); </span>// Stop any existing refresh tasks (Will be restarted when the component is updated)
+<span class="cstat-no" title="statement not covered" >        this.refresh(true, startTime, endTime);</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            startTime: startTime,
+            endTime: endTime,
+            dateRangeNickname: dateRangeNickname
+        });
+<span class="cstat-no" title="statement not covered" >        this.closeDateRangeSelector();</span>
+    };
+&nbsp;
+    /**
+     * Set the refresh interval to be used by the application.
+     *
+     * @param {Event} event The change event of the select input for the refresh interval
+     */
+    setRefreshInterval = <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
+        const {globalState} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        const newRefreshInterval = <span class="cstat-no" title="statement not covered" >event.target.value;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        globalState.set(StateHolder.GLOBAL_FILTER, {</span>
+            ...globalState.get(StateHolder.GLOBAL_FILTER),
+            refreshInterval: newRefreshInterval
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.stopRefreshTask(); </span>// Stop any existing refresh tasks (Will be restarted when the component is updated)
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+            refreshInterval: newRefreshInterval
+        });
+    };
+&nbsp;
+    /**
+     * Call the update method and refresh the relevant parts of the page.
+     * This will also reset the refresh task.
+     */
+    refreshManually = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.stopRefreshTask();</span>
+<span class="cstat-no" title="statement not covered" >        this.refresh(true);</span>
+<span class="cstat-no" title="statement not covered" >        this.startRefreshTask();</span>
+    };
+&nbsp;
+    /**
+     * Start the refresh task which periodically calls the update method.
+     */
+    startRefreshTask = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+        const {refreshInterval, isAutoRefreshEnabled} = <span class="cstat-no" title="statement not covered" >this.state;</span>
+        const self = <span class="cstat-no" title="statement not covered" >this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.stopRefreshTask(); </span>// Stop any existing refresh tasks
+<span class="cstat-no" title="statement not covered" >        if (isAutoRefreshEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >            if (refreshInterval &amp;&amp; refreshInterval &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                this.refreshIntervalID = setInterval(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >self.refresh(false),</span> refreshInterval);</span>
+            }
+        }
+    };
+&nbsp;
+    /**
+     * Stop the refresh task which was started by #startRefreshTask().
+     */
+    stopRefreshTask = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (this.refreshIntervalID) {</span>
+<span class="cstat-no" title="statement not covered" >            clearInterval(this.refreshIntervalID);</span>
+<span class="cstat-no" title="statement not covered" >            this.refreshIntervalID = null;</span>
+        }
+    };
+&nbsp;
+    /**
+     * Refresh the components by calling the on Update.
+     *
+     * @param {boolean} isUserAction True if the refresh was initiated by user
+     * @param {string} startTimeOverride Override for the start time in the state
+     * @param {string} endTimeOverride Override for the end time in the state
+     */
+    refresh = <span class="fstat-no" title="function not covered" >(i</span>sUserAction, startTimeOverride = <span class="branch-0 cbranch-no" title="branch not covered" >undefined,</span> endTimeOverride = <span class="branch-0 cbranch-no" title="branch not covered" >undefined)</span> =&gt; {
+        const {onUpdate} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        const {startTime, endTime} = <span class="cstat-no" title="statement not covered" >this.state;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (onUpdate) {</span>
+<span class="cstat-no" title="statement not covered" >            onUpdate(</span>
+                isUserAction,
+                QueryUtils.parseTime(startTimeOverride ? startTimeOverride : startTime),
+                QueryUtils.parseTime(endTimeOverride ? endTimeOverride : endTime)
+            );
+        }
+    };
+&nbsp;
+}
+&nbsp;
+TopToolbar.propTypes = {
+    onUpdate: PropTypes.func,
+    title: PropTypes.string.isRequired,
+    subTitle: PropTypes.string,
+    classes: PropTypes.any.isRequired,
+    globalState: PropTypes.instanceOf(StateHolder).isRequired,
+    history: PropTypes.shape({
+        goBack: PropTypes.func.isRequired
+    }),
+    location: PropTypes.shape({
+        state: PropTypes.any
+    }).isRequired
+};
+&nbsp;
+export default withStyles(styles, {withTheme: true})(withRouter(withGlobalState(TopToolbar)));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

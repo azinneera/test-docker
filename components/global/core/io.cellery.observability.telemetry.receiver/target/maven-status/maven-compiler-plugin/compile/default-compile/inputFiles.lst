@@ -1,0 +1,12 @@
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/generated/Service.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/generated/AttributesOuterClass.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/GlobalDictionary.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/generated/MixerGrpc.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/generated/Report.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/Constants.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/TelemetryEventSource.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/TelemetryServiceImpl.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/internal/AttributedDecoder.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/Utils.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/generated/Check.java
+/home/asma/cellery/mesh-observability/components/global/core/io.cellery.observability.telemetry.receiver/src/main/java/io/cellery/observability/telemetry/receiver/AttributesBag.java

@@ -1,0 +1,72 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942230846
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.api
+Bundle-SymbolicName: io.cellery.observability.api
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.api;uses:="io.cellery.observabi
+ lity.api.exception,javax.net.ssl,javax.ws.rs,javax.ws.rs.core";version=
+ "0.1.1",io.cellery.observability.api.exception;version="0.1.1",io.celle
+ ry.observability.api.exception.mapper;uses:="javax.ws.rs.core,javax.ws.
+ rs.ext";version="0.1.1",io.cellery.observability.api.interceptor;uses:=
+ "org.wso2.msf4j,org.wso2.msf4j.interceptor";version="0.1.1",io.cellery.
+ observability.api.internal;uses:="io.cellery.observability.api.siddhi,i
+ o.cellery.observability.model.generator,org.apache.http.client,org.json
+ ,org.osgi.framework,org.wso2.carbon.datasource.core.api,org.wso2.carbon
+ .kernel,org.wso2.msf4j";version="0.1.1",io.cellery.observability.api.si
+ ddhi;version="0.1.1"
+Import-Package: com.google.gson;resolution:=optional;version="[2.2,3)",i
+ o.cellery.observability.api;resolution:=optional,io.cellery.observabili
+ ty.api.exception;resolution:=optional,io.cellery.observability.api.exce
+ ption.mapper;resolution:=optional,io.cellery.observability.api.intercep
+ tor;resolution:=optional,io.cellery.observability.api.internal;resoluti
+ on:=optional,io.cellery.observability.api.siddhi;resolution:=optional,i
+ o.cellery.observability.model.generator;resolution:=optional;version="[
+ 0.1,1)",io.cellery.observability.model.generator.model;resolution:=opti
+ onal;version="[0.1,1)",javax.net.ssl;resolution:=optional,javax.ws.rs;r
+ esolution:=optional;version="[2.0,3)",javax.ws.rs.core;resolution:=opti
+ onal;version="[2.0,3)",javax.ws.rs.ext;resolution:=optional;version="[2
+ .0,3)",org.apache.commons.lang3;resolution:=optional;version="[3.7,4)",
+ org.apache.http;resolution:=optional,org.apache.http.client;resolution:
+ =optional,org.apache.http.client.methods;resolution:=optional,org.apach
+ e.http.config;resolution:=optional,org.apache.http.conn;resolution:=opt
+ ional,org.apache.http.conn.socket;resolution:=optional,org.apache.http.
+ conn.ssl;resolution:=optional,org.apache.http.entity;resolution:=option
+ al,org.apache.http.impl.client;resolution:=optional,org.apache.http.imp
+ l.conn;resolution:=optional,org.apache.log4j;resolution:=optional;versi
+ on="[1.2,2)",org.apache.oltu.oauth2.client;resolution:=optional;version
+ ="[1.0,2)",org.apache.oltu.oauth2.client.request;resolution:=optional;v
+ ersion="[1.0,2)",org.apache.oltu.oauth2.client.response;resolution:=opt
+ ional;version="[1.0,2)",org.apache.oltu.oauth2.common.message.types;res
+ olution:=optional;version="[1.0,2)",org.json;resolution:=optional,org.o
+ sgi.framework;resolution:=optional;version="[1.8,2)",org.wso2.carbon.da
+ tasource.core.api;resolution:=optional;version="[1.1,2)",org.wso2.carbo
+ n.kernel;resolution:=optional;version="[5.2,6)",org.wso2.carbon.kernel.
+ config.model;resolution:=optional;version="[5.2,6)",org.wso2.msf4j;reso
+ lution:=optional;version="[2.6,3)",org.wso2.msf4j.interceptor;resolutio
+ n:=optional;version="[2.6,3)",org.wso2.siddhi.core;resolution:=optional
+ ;version="[4.1,5)",org.wso2.siddhi.core.event;resolution:=optional;vers
+ ion="[4.1,5)"
+Require-Capability: osgi.service;filter:="(objectClass=io.cellery.observ
+ ability.model.generator.ModelManager)";effective:=active,osgi.service;f
+ ilter:="(objectClass=org.wso2.carbon.datasource.core.api.DataSourceServ
+ ice)";effective:=active,osgi.service;filter:="(objectClass=org.wso2.car
+ bon.kernel.CarbonRuntime)";effective:=active,osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Service-Component: OSGI-INF/org.wso2.carbon.governance.dependency.model.
+ internal.ObservabilityDS.xml
+Tool: Bnd-3.0.0.201509101326

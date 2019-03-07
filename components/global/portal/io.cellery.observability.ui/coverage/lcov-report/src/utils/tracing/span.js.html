@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/utils/tracing/span.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/utils/tracing</a> span.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>76/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>66/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>75/75</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">636x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">318x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2630x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5021x</span>
+<span class="cline-any cline-yes">5021x</span>
+<span class="cline-any cline-yes">5017x</span>
+<span class="cline-any cline-yes">259x</span>
+<span class="cline-any cline-yes">172x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4758x</span>
+<span class="cline-any cline-yes">693x</span>
+<span class="cline-any cline-yes">693x</span>
+<span class="cline-any cline-yes">316x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">693x</span>
+<span class="cline-any cline-yes">296x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5021x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1391x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2603x</span>
+<span class="cline-any cline-yes">2603x</span>
+<span class="cline-any cline-yes">191x</span>
+<span class="cline-any cline-yes">191x</span>
+<span class="cline-any cline-yes">2412x</span>
+<span class="cline-any cline-yes">193x</span>
+<span class="cline-any cline-yes">193x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2603x</span>
+<span class="cline-any cline-yes">170x</span>
+<span class="cline-any cline-yes">170x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2603x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2512x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import Constants from "../constants";
+&nbsp;
+/**
+ * Single span in a Trace.
+ */
+class Span {
+&nbsp;
+    /**
+     * Span constructor.
+     *
+     * @param {Object} spanData Span data object
+     */
+    constructor(spanData) {
+        this.serviceName = spanData.serviceName;
+        this.operationName = spanData.operationName;
+        this.kind = (spanData.kind ? spanData.kind.toUpperCase() : null);
+        this.startTime = spanData.startTime;
+        this.duration = spanData.duration;
+        this.tags = spanData.tags ? JSON.parse(spanData.tags) : {};
+&nbsp;
+        /** These values should not be used. These are only used for building the tree structure **/
+        this.traceId = spanData.traceId;
+        this.spanId = spanData.spanId;
+        this.parentId = spanData.parentId;
+&nbsp;
+        // Adding additional tags
+        const addTagFromSpanData = (tagKey, spanDataKey) =&gt; {
+            if (spanData[spanDataKey]) {
+                this.tags[tagKey] = spanData[[spanDataKey]];
+            }
+        };
+        addTagFromSpanData("k8s.pod", "pod");
+        addTagFromSpanData("k8s.namespace", "namespace");
+&nbsp;
+        /** @type {string} **/
+        this.componentType = "";
+&nbsp;
+        /** @type {{name: string, version: string}} **/
+        this.cell = (spanData.cell ? {name: spanData.cell, version: null} : null);
+&nbsp;
+        /** @type {Span} **/
+        this.parent = null;
+&nbsp;
+        /** @type {Set.&lt;Span&gt;} **/
+        this.children = new Set();
+&nbsp;
+        /** @type {Span} **/
+        this.sibling = null;
+&nbsp;
+        this.treeDepth = null;
+    }
+&nbsp;
+    /**
+     * Check if another span is a sibling of this span.
+     *
+     * @param {Span} span The span to check if it is a sibling
+     * @returns {boolean} True if this is a sibling of the other span
+     */
+    isSiblingOf = (span) =&gt; Boolean(span) &amp;&amp; this.traceId === span.traceId &amp;&amp; this.spanId === span.spanId
+        &amp;&amp; ((this.kind === Constants.Span.Kind.CLIENT &amp;&amp; span.kind === Constants.Span.Kind.SERVER)
+            || (this.kind === Constants.Span.Kind.SERVER &amp;&amp; span.kind === Constants.Span.Kind.CLIENT));
+&nbsp;
+    /**
+     * Check if this is the parent of another span.
+     *
+     * @param {Span} span The span to check if it is a child
+     * @returns {boolean} True if this is the parent of the other span
+     */
+    isParentOf = (span) =&gt; {
+        let isParentOfSpan = false;
+        if (Boolean(span) &amp;&amp; this.traceId === span.traceId) {
+            if (this.spanId === span.spanId) {
+                if (this.kind === Constants.Span.Kind.CLIENT &amp;&amp; span.kind === Constants.Span.Kind.SERVER) { // Siblings
+                    isParentOfSpan = true;
+                }
+            } else if (this.spanId === span.parentId) {
+                isParentOfSpan = true;
+                if (this.hasSibling() &amp;&amp; this.kind !== Constants.Span.Kind.SERVER) {
+                    isParentOfSpan = false;
+                }
+                if (span.hasSibling() &amp;&amp; span.kind !== Constants.Span.Kind.CLIENT) {
+                    isParentOfSpan = false;
+                }
+            }
+        }
+        return isParentOfSpan;
+    };
+&nbsp;
+    /**
+     * Check if this span has a sibling.
+     *
+     * @returns {boolean} True if this span has a sibling
+     */
+    hasSibling = () =&gt; this.kind === Constants.Span.Kind.CLIENT || this.kind === Constants.Span.Kind.SERVER;
+&nbsp;
+    /**
+     * Add a reference to another span in this span.
+     * Only child, parent and sibling spans are added as references.
+     *
+     * @param {Span} span The to which the reference should be added
+     * @returns {boolean} True if the span was added as a reference
+     */
+    addSpanReference = (span) =&gt; {
+        let spanAdded = false;
+        if (this.isParentOf(span)) {
+            this.children.add(span);
+            spanAdded = true;
+        } else if (Boolean(span) &amp;&amp; span.isParentOf(this)) {
+            this.parent = span;
+            spanAdded = true;
+        }
+        if (this.isSiblingOf(span)) {
+            this.sibling = span;
+            spanAdded = true;
+        }
+        return spanAdded;
+    };
+&nbsp;
+    /**
+     * Reset all references to spans.
+     */
+    resetSpanReferences = () =&gt; {
+        this.children.clear();
+        this.parent = null;
+        this.sibling = null;
+        this.treeDepth = 0;
+    };
+&nbsp;
+    /**
+     * Walk down the trace tree starting from this span in DFS manner.
+     * When a node has multiple children they will be traveled in the order of their start time.
+     *
+     * @param {function} nodeCallBack The callback to be called in each node.
+     *                                The function should return the data that should be passed down to the children.
+     * @param {Object} data The initial data to be passed down the trace tree
+     * @param {function} postTraverseCallBack The callback to be called after traversing a node.
+     * @param {function} shouldTerminate
+     */
+&nbsp;
+    walk(nodeCallBack, data = {}, postTraverseCallBack = null, shouldTerminate = null) {
+        if (shouldTerminate &amp;&amp; shouldTerminate(this)) {
+            return;
+        }
+&nbsp;
+        let newData;
+        if (nodeCallBack) {
+            newData = nodeCallBack(this, data);
+        }
+&nbsp;
+        // Get the list of children of this node
+        const children = [];
+        const childrenIterator = this.children.values();
+        let currentChild = childrenIterator.next();
+        while (!currentChild.done) {
+            children.push(currentChild.value);
+            currentChild = childrenIterator.next();
+        }
+&nbsp;
+        // Sorting by start time
+        children.sort((a, b) =&gt; a.startTime - b.startTime);
+&nbsp;
+        // Traversing down the tree structure
+        for (let i = 0; i &lt; children.length; i++) {
+            children[i].walk(nodeCallBack, newData, postTraverseCallBack, shouldTerminate);
+        }
+        if (postTraverseCallBack) {
+            postTraverseCallBack(this);
+        }
+    }
+&nbsp;
+    /**
+     * Get a unique ID to represent this span.
+     *
+     * @returns {string} the unique ID to represent this span
+     */
+    getUniqueId = () =&gt; `${this.traceId}--${this.spanId}${this.kind ? `--${this.kind}` : ""}`;
+&nbsp;
+    /**
+     * Check whether a span belongs to the cell gateway.
+     *
+     * @returns {boolean} True if the component to which the span belongs to is a cell gateway
+     */
+    isFromCellGateway = () =&gt; (
+        Boolean(this.cell) &amp;&amp; Boolean(this.cell.name) &amp;&amp; Constants.Cell.GATEWAY_NAME_PATTERN.test(this.serviceName)
+    );
+&nbsp;
+    /**
+     * Check whether a span belongs to the Istio System.
+     *
+     * @returns {boolean} True if the component to which the span belongs to is a system component
+     */
+    isFromIstioSystemComponent = () =&gt; Constants.System.ISTIO_MIXER_NAME_PATTERN.test(this.serviceName);
+&nbsp;
+    /**
+     * Check whether a span belongs to the side car.
+     *
+     * @returns {boolean} True if the span is from side car
+     */
+    isFromSideCar = () =&gt; this.tags.component === "proxy";
+&nbsp;
+    /**
+     * Check whether a span belongs to the Cellery System.
+     *
+     * @returns {boolean} True if the component to which the span belongs to is a system component
+     */
+    isFromCellerySystemComponent = () =&gt; (
+        this.isFromCellGateway() || Constants.System.GLOBAL_GATEWAY_NAME_PATTERN.test(this.serviceName)
+            || Constants.System.SIDECAR_AUTH_FILTER_OPERATION_NAME_PATTERN.test(this.operationName)
+    );
+&nbsp;
+    /**
+     * Check whether an error occurred during this span.
+     *
+     * @returns {boolean} True if an error had occurred in this span
+     */
+    hasError = () =&gt; this.tags.error === true || this.tags.error === "true";
+&nbsp;
+    /**
+     * Create a shallow clone.
+     * This will create a clone without the span references.
+     *
+     * @returns {Span} The cloned span
+     */
+    shallowClone = () =&gt; {
+        const span = new Span({
+            traceId: this.traceId,
+            spanId: this.spanId,
+            parentId: this.parentId,
+            serviceName: this.serviceName,
+            operationName: this.operationName,
+            kind: this.kind,
+            startTime: this.startTime,
+            duration: this.duration
+        });
+        span.tags = {...this.tags};
+        span.componentType = this.componentType;
+        span.cell = {...this.cell};
+        return span;
+    };
+&nbsp;
+}
+&nbsp;
+export default Span;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

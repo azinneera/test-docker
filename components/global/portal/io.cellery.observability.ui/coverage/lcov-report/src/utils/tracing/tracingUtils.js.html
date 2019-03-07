@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/utils/tracing/tracingUtils.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/utils/tracing</a> tracingUtils.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>74/74</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>52/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>71/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">215x</span>
+<span class="cline-any cline-yes">215x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">2694x</span>
+<span class="cline-any cline-yes">2694x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">2695x</span>
+<span class="cline-any cline-yes">2508x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">187x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import Constants from "../constants";
+&nbsp;
+/**
+ * Utilities used for processing Constants related data.
+ */
+class TracingUtils {
+&nbsp;
+    /**
+     * Build a tree model using a spans list.
+     *
+     * @param {Array.&lt;Span&gt;} spansList The spans list from which the tree should be built
+     * @returns {Span} The root span of the tree
+     */
+    static buildTree = (spansList) =&gt; {
+        // Finding the root spans candidates (There can be one root span or two sibling root spans)
+        const spanIdList = spansList.map((span) =&gt; span.spanId);
+        const rootSpanCandidates = spansList.filter((span) =&gt; span.spanId === span.traceId
+            || !spanIdList.includes(span.parentId));
+&nbsp;
+        // Finding the root span and initializing current span
+        let rootSpan;
+        if (rootSpanCandidates.length === 1) { // Single root
+            rootSpan = rootSpanCandidates[0];
+        } else if (rootSpanCandidates.length === 2) { // Two routes with one client span and one server span
+            let rootSpanIndex;
+            if (rootSpanCandidates[0].isSiblingOf(rootSpanCandidates[1])) {
+                if (rootSpanCandidates[0].isParentOf(rootSpanCandidates[1])) {
+                    rootSpanIndex = 0;
+                } else {
+                    rootSpanIndex = 1;
+                }
+            } else {
+                throw Error("Invalid Trace: Expected 1 root span, but found two non-sibling root spans.");
+            }
+            rootSpan = rootSpanCandidates[rootSpanIndex];
+            rootSpanCandidates[0].sibling = rootSpanCandidates[1];
+            rootSpanCandidates[1].sibling = rootSpanCandidates[0];
+        } else {
+            throw Error(`Invalid Trace: Expected 1 root span, but found ${rootSpanCandidates.length} root spans`);
+        }
+&nbsp;
+        // Fixing siblings kinds
+        for (let i = 0; i &lt; spansList.length; i++) {
+            const span = spansList[i];
+&nbsp;
+            let hasSameServiceParent = false;
+            let hasSameServiceChild = false;
+            for (let j = 0; j &lt; spansList.length; j++) {
+                const consideredSpan = spansList[j];
+                if (i !== j &amp;&amp; !span.isFromSideCar() &amp;&amp; span.cell === consideredSpan.cell
+                    &amp;&amp; span.serviceName === consideredSpan.serviceName) {
+                    if (span.parentId === consideredSpan.spanId) {
+                        hasSameServiceParent = true;
+                    }
+                    if (span.spanId === consideredSpan.parentId) {
+                        hasSameServiceChild = true;
+                    }
+                    if (hasSameServiceChild &amp;&amp; hasSameServiceParent) {
+                        break;
+                    }
+                }
+            }
+            if (hasSameServiceChild &amp;&amp; hasSameServiceParent) {
+                span.kind = null;
+            }
+        }
+&nbsp;
+        TracingUtils.addTreeConnections(spansList, rootSpan);
+&nbsp;
+        return rootSpan;
+    };
+&nbsp;
+    /**
+     * Add the connections (parent-child and sibling relationships) to build the tree connections.
+     *
+     * @private
+     * @param {Array.&lt;Span&gt;} spansList The list of spans to add the connections between
+     * @param {Span} rootSpan The root span for this tree (Used to find isolated spans)
+     */
+    static addTreeConnections(spansList, rootSpan) {
+        // Adding references to the properly connected nodes
+        for (let i = 0; i &lt; spansList.length; i++) {
+            for (let j = 0; j &lt; spansList.length; j++) {
+                if (i !== j) {
+                    spansList[i].addSpanReference(spansList[j]);
+                }
+            }
+        }
+&nbsp;
+        // Adding improperly connected nodes (parent-child relationship)
+        for (let i = 0; i &lt; spansList.length; i++) {
+            const currentSpan = spansList[i];
+            if (!currentSpan.parent &amp;&amp; currentSpan !== rootSpan) {
+                for (let j = 0; j &lt; spansList.length; j++) {
+                    if (spansList[j].spanId === currentSpan.parentId) {
+                        currentSpan.parent = spansList[j];
+                        spansList[j].children.add(currentSpan);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+&nbsp;
+    /**
+     * Traverse the span tree and label the nodes.
+     *
+     * @param {Span} tree The root span of the tree
+     */
+    static labelSpanTree = (tree) =&gt; {
+        tree.walk((span) =&gt; {
+            if (span.isFromIstioSystemComponent() || span.isFromCellerySystemComponent()) {
+                span.componentType = Constants.CelleryType.SYSTEM;
+            } else {
+                span.componentType = Constants.CelleryType.COMPONENT;
+            }
+        }, null);
+&nbsp;
+        // Calculating the tree depths
+        tree.walk((span, data) =&gt; {
+            span.treeDepth = data;
+            return data + 1;
+        }, 0);
+    };
+&nbsp;
+    /**
+     * Get the root from a list containing the spans of a tree.
+     *
+     * @param {Array.&lt;Span&gt;} spans The list of spans
+     * @returns {Span} The tree root
+     */
+    static getTreeRoot = (spans) =&gt; {
+        const filteredSpans = spans.filter((span) =&gt; span.parent === null);
+        if (spans.length !== 1 &amp;&amp; filteredSpans.length === spans.length) {
+            throw Error("The spans in the list does not contain a tree structure");
+        } else if (filteredSpans.length !== 1) {
+            throw Error(`Invalid Trace Tree: Expected 1 root span, found ${filteredSpans.length} spans`);
+        }
+        return filteredSpans[0];
+    };
+&nbsp;
+    /**
+     * Traverse the span tree and generate a list of ordered spans.
+     *
+     * @param {Span} tree The root span of the tree
+     * @returns {Array.&lt;Span&gt;} The list of spans ordered by time and tree structure
+     */
+    static getOrderedList = (tree) =&gt; {
+        const spanList = [];
+        tree.walk((span) =&gt; {
+            spanList.push(span);
+        });
+        return spanList;
+    };
+&nbsp;
+    /**
+     * Reset the tree references to one another resulting in the destruction of the tree structure.
+     * This is required when the tree needs to be built again with different connections.
+     *
+     * @param {Array.&lt;Span&gt;} spans The list of spans to reset
+     */
+    static resetTreeSpanReferences = (spans) =&gt; {
+        for (let i = 0; i &lt; spans.length; i++) {
+            spans[i].resetSpanReferences();
+        }
+    };
+&nbsp;
+    /**
+     * Remove a span from the tree preserving the tree structure.
+     *
+     * @param {Span} spanToBeRemoved The span to be removed
+     */
+    static removeSpanFromTree = (spanToBeRemoved) =&gt; {
+        const parent = spanToBeRemoved.parent;
+        if (parent) {
+            parent.children.delete(spanToBeRemoved);
+        }
+        spanToBeRemoved.children.forEach((child) =&gt; {
+            if (parent) {
+                parent.children.add(child);
+            }
+            child.parent = parent;
+        });
+        if (spanToBeRemoved.sibling) {
+            spanToBeRemoved.sibling.sibling = null;
+        }
+    };
+&nbsp;
+}
+&nbsp;
+export default TracingUtils;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

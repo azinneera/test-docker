@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942081698
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: This bundle represents com.google.protobuf with gogo
+ .proto.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: protobuf
+Bundle-SymbolicName: protobuf
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Embed-Directory: services/*
+Export-Package: com.google.protobuf;version="3.6.1",com.google.protobuf.
+ compiler;version="3.6.1";uses:="com.google.protobuf"
+Import-Package: com.google.protobuf;resolution:=optional;version="[3.6,4
+ )",sun.misc;resolution:=optional
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

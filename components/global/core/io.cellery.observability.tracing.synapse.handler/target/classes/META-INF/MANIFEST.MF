@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942103292
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.tracing.synapse.handler
+Bundle-SymbolicName: io.cellery.observability.tracing.synapse.handler
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.tracing.synapse.handler;uses:="
+ org.apache.synapse";version="0.1.1"
+Import-Package: brave;resolution:=optional;version="[4.17,5)",brave.open
+ tracing;resolution:=optional,brave.propagation;resolution:=optional;ver
+ sion="[4.17,5)",io.opentracing;resolution:=optional,io.opentracing.prop
+ agation;resolution:=optional,org.apache.axis2.addressing;resolution:=op
+ tional,org.apache.axis2.context;resolution:=optional,org.apache.log4j;r
+ esolution:=optional,org.apache.synapse;resolution:=optional,org.apache.
+ synapse.core.axis2;resolution:=optional,zipkin2.codec;resolution:=optio
+ nal;version="[2.11,3)",zipkin2.reporter;resolution:=optional;version="[
+ 2.5,3)",zipkin2.reporter.urlconnection;resolution:=optional;version="[2
+ .5,3)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

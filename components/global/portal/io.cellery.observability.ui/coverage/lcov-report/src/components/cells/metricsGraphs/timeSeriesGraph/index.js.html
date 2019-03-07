@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/cells/metricsGraphs/timeSeriesGraph/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/components/cells/metricsGraphs/timeSeriesGraph</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.64% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+ * Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+import Button from "@material-ui/core/Button/Button";
+import Card from "@material-ui/core/Card/Card";
+import CardContent from "@material-ui/core/CardContent/CardContent";
+import CardHeader from "@material-ui/core/CardHeader/CardHeader";
+import Constants from "../../../../utils/constants";
+import InfoIcon from "@material-ui/icons/InfoOutlined";
+import React from "react";
+import Timeline from "@material-ui/icons/Timeline";
+import Tooltip from "@material-ui/core/Tooltip/Tooltip";
+import TracesDialog from "./TracesDialog";
+import moment from "moment";
+import {withStyles} from "@material-ui/core";
+import {
+    Crosshair, DiscreteColorLegend, Highlight, HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot,
+    YAxis, makeWidthFlexible
+} from "react-vis";
+import * as PropTypes from "prop-types";
+&nbsp;
+const styles = <span class="fstat-no" title="function not covered" >(t</span>heme) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    cardHeader: {
+        borderBottom: "1px solid #eee",
+        paddingTop: theme.spacing.unit,
+        paddingBottom: theme.spacing.unit
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 500,
+        color: "#4d4d4d"
+    },
+    viewTracesButton: {
+        fontSize: 12,
+        verticalAlign: "middle",
+        marginRight: theme.spacing.unit
+    },
+    viewTracesContent: {
+        paddingLeft: theme.spacing.unit
+    },
+    infoIcon: {
+        color: "#999",
+        marginRight: 27,
+        fontSize: 18,
+        verticalAlign: "middle"
+    },
+    card: {
+        boxShadow: "none",
+        border: "1px solid #eee"
+    },
+    cardActions: {
+        marginTop: theme.spacing.unit / 4
+    },
+    toolTipHead: {
+        fontWeight: 600
+    }
+});
+&nbsp;
+const FlexibleWidthXYPlot = makeWidthFlexible(XYPlot);
+&nbsp;
+class TimeSeriesGraph extends React.Component {
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            tooltipData: [],
+            lastDrawArea: null
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.traceDialogRef = React.createRef();</span>
+    }
+&nbsp;
+    render = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+        const {classes, traceSearchFilter, title, data, yAxis} = <span class="cstat-no" title="statement not covered" >this.props;</span>
+        const {lastDrawArea, tooltipData} = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;Card className={classes.card}&gt;
+                &lt;CardHeader title={title} className={classes.cardHeader}
+                    classes={{
+                        title: classes.title,
+                        action: classes.cardActions
+                    }}
+                    action={
+                        (
+                            &lt;React.Fragment&gt;
+                                {
+                                    lastDrawArea
+                                        ? (
+                                            &lt;React.Fragment&gt;
+                                                &lt;Tooltip title="View traces for the selected time range"&gt;
+                                                    &lt;Button className={classes.viewTracesButton} variant="outlined"
+                                                        onClick={this.handleClickOpen}&gt;
+                                                        &lt;Timeline color="action"/&gt;
+                                                        &lt;span className={classes.viewTracesContent}&gt;View Traces&lt;/span&gt;
+                                                    &lt;/Button&gt;
+                                                &lt;/Tooltip&gt;
+                                                &lt;TracesDialog filter={traceSearchFilter} innerRef={this.traceDialogRef}
+                                                    selectedArea={lastDrawArea}/&gt;
+                                            &lt;/React.Fragment&gt;
+                                        )
+                                        : null
+                                }
+                                &lt;Tooltip title={"Click and drag in the plot area to zoom in, click anywhere in the "
+                                    + "graph to zoom out."}&gt;
+                                    &lt;InfoIcon className={classes.infoIcon}/&gt;
+                                &lt;/Tooltip&gt;
+                            &lt;/React.Fragment&gt;
+                        )
+                    }
+                /&gt;
+                &lt;CardContent&gt;
+                    &lt;div&gt;
+                        &lt;FlexibleWidthXYPlot xType="time" height={400} animation
+                            xDomain={
+                                lastDrawArea
+                                    ? [
+                                        lastDrawArea.left,
+                                        lastDrawArea.right
+                                    ]
+                                    : null
+                            }
+                            onMouseLeave={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.setState({tooltipData: []})}</span>&gt;
+                            &lt;HorizontalGridLines/&gt;
+                            &lt;VerticalGridLines/&gt;
+                            &lt;XAxis title="Time"/&gt;
+                            &lt;YAxis title={`${yAxis.title} (${yAxis.unit})`}/&gt;
+                            {
+                                data.map(<span class="fstat-no" title="function not covered" >(d</span>atum) =&gt; (
+<span class="cstat-no" title="statement not covered" >                                    &lt;LineMarkSeries key={datum.title} color={datum.color} size={3}</span>
+                                        data={datum.points.map(<span class="fstat-no" title="function not covered" >(p</span>oint) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                                            x: point.timestamp,
+                                            y: point.value
+                                        }))}
+                                        onNearestX={<span class="fstat-no" title="function not covered" >(d</span>, {index}) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({</span>
+                                            tooltipData: data.map(<span class="fstat-no" title="function not covered" >(d</span>atum) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                                                ...datum.points[index],
+                                                name: datum.title
+                                            }))
+                                        })}/&gt;
+                                ))
+                            }
+                            {
+                                tooltipData.length &gt; 0
+                                    ? (
+                                        &lt;Crosshair values={tooltipData.map(<span class="fstat-no" title="function not covered" >(t</span>ooltipDatum) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                                            x: tooltipDatum.timestamp,
+                                            y: tooltipDatum.value
+                                        }))}&gt;
+                                            &lt;div className="rv-hint__content"&gt;
+                                                &lt;div className={classes.toolTipHead}&gt;
+                                                    {
+                                                        `${moment(tooltipData[0].timestamp)
+                                                            .format(Constants.Pattern.DATE_TIME)}`
+                                                    }
+                                                &lt;/div&gt;
+                                                {
+                                                    tooltipData.map(<span class="fstat-no" title="function not covered" >(t</span>ooltipDatum) =&gt; (
+<span class="cstat-no" title="statement not covered" >                                                        &lt;div key={tooltipDatum.name}&gt;</span>
+                                                            {
+                                                                `${tooltipDatum.name}:
+                                                                    ${Math.round(tooltipDatum.value)} ${yAxis.unit}`
+                                                            }
+                                                        &lt;/div&gt;
+                                                    ))
+                                                }
+                                            &lt;/div&gt;
+                                        &lt;/Crosshair&gt;
+                                    )
+                                    : null
+                            }
+                            &lt;Highlight enableY={false}
+                                onBrushEnd={<span class="fstat-no" title="function not covered" >(a</span>rea) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({lastDrawArea: area})}</span>
+                                onDrag={<span class="fstat-no" title="function not covered" >(a</span>rea) =&gt; {
+<span class="cstat-no" title="statement not covered" >                                    this.setState({</span>
+                                        lastDrawArea: {
+                                            bottom: lastDrawArea.bottom + (area.top - area.bottom),
+                                            left: lastDrawArea.left - (area.right - area.left),
+                                            right: lastDrawArea.right - (area.right - area.left),
+                                            top: lastDrawArea.top + (area.top - area.bottom)
+                                        }
+                                    });
+                                }}/&gt;
+                        &lt;/FlexibleWidthXYPlot&gt;
+                        &lt;DiscreteColorLegend orientation="horizontal"
+                            items={data.map(<span class="fstat-no" title="function not covered" >(d</span>atum) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+                                title: datum.title,
+                                color: datum.color
+                            }))}/&gt;
+                    &lt;/div&gt;
+                &lt;/CardContent&gt;
+            &lt;/Card&gt;
+        );
+    };
+&nbsp;
+    handleClickOpen = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (this.traceDialogRef.current &amp;&amp; this.traceDialogRef.current.handleClickOpen) {</span>
+<span class="cstat-no" title="statement not covered" >            this.traceDialogRef.current.handleClickOpen();</span>
+        }
+    };
+&nbsp;
+}
+&nbsp;
+TimeSeriesGraph.propTypes = {
+    classes: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        points: PropTypes.arrayOf(PropTypes.shape({
+            timestamp: PropTypes.number.isRequired,
+            value: PropTypes.number.isRequired
+        })).isRequired,
+        color: PropTypes.string.isRequired
+    })).isRequired,
+    yAxis: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        unit: PropTypes.string.isRequired
+    }).isRequired,
+    traceSearchFilter: PropTypes.shape({
+        cell: PropTypes.string,
+        component: PropTypes.string,
+        operation: PropTypes.string,
+        tags: PropTypes.object,
+        minDuration: PropTypes.number,
+        minDurationMultiplier: PropTypes.number,
+        maxDuration: PropTypes.number,
+        maxDurationMultiplier: PropTypes.number
+    }).isRequired
+};
+&nbsp;
+export default withStyles(styles)(TimeSeriesGraph);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 07 2019 12:40:53 GMT+0530 (+0530)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

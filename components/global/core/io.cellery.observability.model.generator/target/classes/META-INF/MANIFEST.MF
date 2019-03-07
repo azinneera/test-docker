@@ -1,0 +1,78 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942210528
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.model.generator
+Bundle-SymbolicName: io.cellery.observability.model.generator
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.model.generator;uses:="com.goog
+ le.common.graph,io.cellery.observability.model.generator.exception,io.c
+ ellery.observability.model.generator.model,org.wso2.siddhi.annotation,o
+ rg.wso2.siddhi.annotation.util,org.wso2.siddhi.core.config,org.wso2.sid
+ dhi.core.event,org.wso2.siddhi.core.event.state,org.wso2.siddhi.core.ev
+ ent.stream,org.wso2.siddhi.core.event.stream.populater,org.wso2.siddhi.
+ core.executor,org.wso2.siddhi.core.query.processor,org.wso2.siddhi.core
+ .query.processor.stream,org.wso2.siddhi.core.query.processor.stream.win
+ dow,org.wso2.siddhi.core.table,org.wso2.siddhi.core.util,org.wso2.siddh
+ i.core.util.collection.operator,org.wso2.siddhi.core.util.config,org.ws
+ o2.siddhi.query.api.definition,org.wso2.siddhi.query.api.expression";ve
+ rsion="0.1.1",io.cellery.observability.model.generator.exception;versio
+ n="0.1.1",io.cellery.observability.model.generator.internal;uses:="com.
+ google.common.graph,io.cellery.observability.model.generator,io.cellery
+ .observability.model.generator.exception,io.cellery.observability.model
+ .generator.model,org.osgi.framework,org.wso2.carbon.datasource.core.api
+ ";version="0.1.1",io.cellery.observability.model.generator.model;uses:=
+ "io.cellery.observability.model.generator";version="0.1.1"
+Import-Package: com.google.common.graph;resolution:=optional;version="[2
+ 5.1,26)",com.google.gson;resolution:=optional,com.google.gson.reflect;r
+ esolution:=optional,io.cellery.observability.model.generator;resolution
+ :=optional,io.cellery.observability.model.generator.exception;resolutio
+ n:=optional,io.cellery.observability.model.generator.internal;resolutio
+ n:=optional,io.cellery.observability.model.generator.model;resolution:=
+ optional,javax.sql;resolution:=optional,org.apache.log4j;resolution:=op
+ tional;version="[1.2,2)",org.osgi.framework;resolution:=optional;versio
+ n="[1.8,2)",org.wso2.carbon.datasource.core.api;resolution:=optional;ve
+ rsion="[1.1,2)",org.wso2.carbon.datasource.core.exception;resolution:=o
+ ptional;version="[1.1,2)",org.wso2.siddhi.annotation;resolution:=option
+ al;version="[4.1,5)",org.wso2.siddhi.annotation.util;resolution:=option
+ al;version="[4.1,5)",org.wso2.siddhi.core.config;resolution:=optional;v
+ ersion="[4.1,5)",org.wso2.siddhi.core.event;resolution:=optional;versio
+ n="[4.1,5)",org.wso2.siddhi.core.event.state;resolution:=optional;versi
+ on="[4.1,5)",org.wso2.siddhi.core.event.stream;resolution:=optional;ver
+ sion="[4.1,5)",org.wso2.siddhi.core.event.stream.populater;resolution:=
+ optional;version="[4.1,5)",org.wso2.siddhi.core.exception;resolution:=o
+ ptional;version="[4.1,5)",org.wso2.siddhi.core.executor;resolution:=opt
+ ional;version="[4.1,5)",org.wso2.siddhi.core.query.processor;resolution
+ :=optional;version="[4.1,5)",org.wso2.siddhi.core.query.processor.strea
+ m;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.query.pro
+ cessor.stream.window;resolution:=optional;version="[4.1,5)",org.wso2.si
+ ddhi.core.table;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.
+ core.util;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.u
+ til.collection.operator;resolution:=optional;version="[4.1,5)",org.wso2
+ .siddhi.core.util.config;resolution:=optional;version="[4.1,5)",org.wso
+ 2.siddhi.core.util.parser;resolution:=optional;version="[4.1,5)",org.ws
+ o2.siddhi.query.api.definition;resolution:=optional;version="[4.1,5)",o
+ rg.wso2.siddhi.query.api.exception;resolution:=optional;version="[4.1,5
+ )",org.wso2.siddhi.query.api.expression;resolution:=optional;version="[
+ 4.1,5)"
+Provide-Capability: osgi.service;objectClass:List<String>="io.cellery.ob
+ servability.model.generator.internal.ModelServiceComponent"
+Require-Capability: osgi.service;filter:="(objectClass=org.wso2.carbon.d
+ atasource.core.api.DataSourceService)";effective:=active;cardinality:=m
+ ultiple,osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Service-Component: OSGI-INF/io.cellery.observability.model.generator.int
+ ernal.ModelServiceComponent.xml
+Tool: Bnd-3.0.0.201509101326

@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1551942190426
+Build-Jdk: 1.8.0_121
+Built-By: asma
+Bundle-Contributors: WSO2 Inc
+Bundle-Copyright: WSO2 Inc
+Bundle-Description: WSO2 is an open source application development softw
+ are company focused on providing service-orientedarchitecture solutions
+  for professional developers.
+Bundle-Developers: WSO2 Inc
+Bundle-DocURL: https://docs.wso2.com
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: io.cellery.observability.k8s.api.server.client
+Bundle-SymbolicName: io.cellery.observability.k8s.api.server.client
+Bundle-Vendor: WSO2 Inc
+Bundle-Version: 0.1.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Export-Package: io.cellery.observability.k8s.api.server.client;uses:="or
+ g.wso2.siddhi.annotation,org.wso2.siddhi.core.config,org.wso2.siddhi.co
+ re.event,org.wso2.siddhi.core.event.stream,org.wso2.siddhi.core.event.s
+ tream.populater,org.wso2.siddhi.core.executor,org.wso2.siddhi.core.quer
+ y.processor,org.wso2.siddhi.core.query.processor.stream,org.wso2.siddhi
+ .core.util.config,org.wso2.siddhi.query.api.definition";version="0.1.1"
+Import-Package: io.kubernetes.client;resolution:=optional;version="[3.0,
+ 4)",io.kubernetes.client.apis;resolution:=optional;version="[3.0,4)",io
+ .kubernetes.client.models;resolution:=optional;version="[3.0,4)",io.kub
+ ernetes.client.util;resolution:=optional;version="[3.0,4)",org.apache.l
+ og4j;resolution:=optional;version="[1.2,2)",org.joda.time;resolution:=o
+ ptional;version="[2.9,3)",org.wso2.siddhi.annotation;resolution:=option
+ al;version="[4.1,5)",org.wso2.siddhi.core.config;resolution:=optional;v
+ ersion="[4.1,5)",org.wso2.siddhi.core.event;resolution:=optional;versio
+ n="[4.1,5)",org.wso2.siddhi.core.event.stream;resolution:=optional;vers
+ ion="[4.1,5)",org.wso2.siddhi.core.event.stream.populater;resolution:=o
+ ptional;version="[4.1,5)",org.wso2.siddhi.core.executor;resolution:=opt
+ ional;version="[4.1,5)",org.wso2.siddhi.core.query.processor;resolution
+ :=optional;version="[4.1,5)",org.wso2.siddhi.core.query.processor.strea
+ m;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.core.util.conf
+ ig;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.query.api.def
+ inition;resolution:=optional;version="[4.1,5)",org.wso2.siddhi.query.ap
+ i.exception;resolution:=optional;version="[4.1,5)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: 39ad8f3675a4d5292d93b79e6acccb6454e988f3
+Tool: Bnd-3.0.0.201509101326

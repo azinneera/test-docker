@@ -1,0 +1,2 @@
+io.cellery.observability.model.generator.ModelGenerationExtension
+io.cellery.observability.model.generator.TraceGroupWindowProcessor
